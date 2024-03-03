@@ -28,14 +28,14 @@ AB_OTA_PARTITIONS += \
     vendor
 
 # Assertions
-TARGET_BOARD_INFO_FILE := device/motorola/evert/board-info.txt
+TARGET_BOARD_INFO_FILE := device/motorola/evert/configs/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := evert
 
 # Display
 TARGET_SCREEN_DENSITY := 420
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_evert_defconfig
+TARGET_KERNEL_CONFIG := evert_defconfig
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/c0c4000.sdhci
 
 # HIDL
@@ -58,8 +58,8 @@ BOARD_SUPER_PARTITION_VENDOR_DEVICE_SIZE := 956301312
 TARGET_HAS_NO_WLAN_STATS := true
 
 # Properties
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/properties/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
