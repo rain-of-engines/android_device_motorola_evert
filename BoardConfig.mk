@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/motorola/evert
+
 # Inherit from motorola sdm660-common
 -include device/motorola/sdm660-common/BoardConfigCommon.mk
-
-DEVICE_PATH := device/motorola/evert
 
 # A/B updater
 AB_OTA_UPDATER := true
@@ -34,17 +34,17 @@ TARGET_OTA_ASSERT_DEVICE := evert
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/evert_manifest.xml
+
 # Kernel
 TARGET_KERNEL_CONFIG := evert_defconfig
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/c0c4000.sdhci
 
-# HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/evert_manifest.xml
-
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 
-# Retrofit dynamic partitions
+# Partitions dynamic
 BOARD_SUPER_PARTITION_GROUPS := moto_dynamic_partitions
 BOARD_MOTO_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor
 BOARD_MOTO_DYNAMIC_PARTITIONS_SIZE := 3837758164
