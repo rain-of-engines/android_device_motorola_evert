@@ -14,10 +14,4 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_evert.mk
-
-COMMON_LUNCH_CHOICES := \
-    aosp_evert-eng \
-    aosp_evert-user \
-    aosp_evert-userdebug
+PRODUCT_MAKEFILES := $(wildcard device/motorola/targets/devices/evert/*.mk)
