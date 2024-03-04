@@ -22,9 +22,10 @@ $(call inherit-product, device/motorola/sdm660-common/common.mk)
 PRODUCT_MODEL := Moto G6 Plus 
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    FrameworksOverlay \
+    SettingsOverlayEvert \
+    SettingsProviderEvert
 
 # A/B updater
 AB_OTA_POSTINSTALL_CONFIG += \
